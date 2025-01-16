@@ -1,0 +1,76 @@
+-------------------------------------------------------------------------------
+Test set: com.authservice.auth_service.dto.LoginRequestDTOTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.199 s <<< FAILURE! -- in com.authservice.auth_service.dto.LoginRequestDTOTest
+com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginEmailAndPasswordMissing -- Time elapsed: 0.021 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.message" expected:<Email is required, Password is required> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginEmailAndPasswordMissing(LoginRequestDTOTest.java:82)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginInvalidEmail -- Time elapsed: 0.020 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.message" expected:<It must be a valid email> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginInvalidEmail(LoginRequestDTOTest.java:60)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginMissingPassword -- Time elapsed: 0.020 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.message" expected:<Password is required> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginMissingPassword(LoginRequestDTOTest.java:71)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginInvalidEmailAndValidPassword -- Time elapsed: 0.020 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.message" expected:<It must be a valid email> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginInvalidEmailAndValidPassword(LoginRequestDTOTest.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginValidEmailAndMissingPassword -- Time elapsed: 0.020 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.message" expected:<Password is required> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginValidEmailAndMissingPassword(LoginRequestDTOTest.java:93)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginMissingEmail -- Time elapsed: 0.017 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.message" expected:<Email is required> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.dto.LoginRequestDTOTest.testLoginMissingEmail(LoginRequestDTOTest.java:49)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

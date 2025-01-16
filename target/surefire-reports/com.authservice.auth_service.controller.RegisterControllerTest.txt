@@ -1,0 +1,52 @@
+-------------------------------------------------------------------------------
+Test set: com.authservice.auth_service.controller.RegisterControllerTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.166 s <<< FAILURE! -- in com.authservice.auth_service.controller.RegisterControllerTest
+com.authservice.auth_service.controller.RegisterControllerTest.testRegisterInvalidEmail -- Time elapsed: 0.052 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.message" expected:<Please provide a valid email address> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.controller.RegisterControllerTest.testRegisterInvalidEmail(RegisterControllerTest.java:79)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.authservice.auth_service.controller.RegisterControllerTest.testRegisterInvalidPassword -- Time elapsed: 0.017 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.message" expected:<Password must contain at least one uppercase letter, one lowercase letter, and one number, Password must be at least 8 characters long> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.controller.RegisterControllerTest.testRegisterInvalidPassword(RegisterControllerTest.java:90)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.authservice.auth_service.controller.RegisterControllerTest.testRegisterPasswordWithoutUppercase -- Time elapsed: 0.014 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.message" expected:<Password must contain at least one uppercase letter, one lowercase letter, and one number> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.controller.RegisterControllerTest.testRegisterPasswordWithoutUppercase(RegisterControllerTest.java:100)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.authservice.auth_service.controller.RegisterControllerTest.testRegisterMissingEmail -- Time elapsed: 0.017 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.message" expected:<Email is required> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.controller.RegisterControllerTest.testRegisterMissingEmail(RegisterControllerTest.java:57)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

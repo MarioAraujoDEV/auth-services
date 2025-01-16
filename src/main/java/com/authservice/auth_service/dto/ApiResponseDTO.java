@@ -1,20 +1,23 @@
 package com.authservice.auth_service.dto;
 
+import java.util.Map;
+
 public class ApiResponseDTO {
-    private String message;
+    private Object message;
     private Object data;
 
-    public ApiResponseDTO(String message, Object data) {
+    // Constructor, getters y setters
+    public ApiResponseDTO(Object message, Object data) {
         this.message = message;
         this.data = data;
     }
 
     // Getters y setters
-    public String getMessage() {
+    public Object getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(Object message) {
         this.message = message;
     }
 
@@ -25,5 +28,4 @@ public class ApiResponseDTO {
     public void setData(Object data) {
         this.data = data;
     }
-
 }

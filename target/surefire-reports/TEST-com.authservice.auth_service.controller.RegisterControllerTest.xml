@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.authservice.auth_service.controller.LoginControllerTest" time="1.492" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.authservice.auth_service.controller.RegisterControllerTest" time="0.166" tests="7" errors="0" skipped="0" failures="4">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -70,275 +70,73 @@
     <property name="LOGGED_APPLICATION_NAME" value="[auth-service] "/>
     <property name="LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP" value="104857600"/>
   </properties>
-  <testcase name="testLoginGeneralException" classname="com.authservice.auth_service.controller.LoginControllerTest" time="0.333">
-    <system-out><![CDATA[2025-01-16 22:40:58 - Could not detect default configuration classes for test class [com.authservice.auth_service.controller.LoginControllerTest]: LoginControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-01-16 22:40:58 - Found @SpringBootConfiguration com.authservice.auth_service.AuthServiceApplication for test class com.authservice.auth_service.controller.LoginControllerTest
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.4.1)
-
-2025-01-16 22:40:58 - Starting LoginControllerTest using Java 17.0.2 with PID 21192 (started by usuario in C:\Users\usuario\Desktop\auth-service)
-2025-01-16 22:40:58 - No active profile set, falling back to 1 default profile: "default"
-2025-01-16 22:40:58 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-01-16 22:40:58 - Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
-2025-01-16 22:40:58 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-01-16 22:40:58 - HHH000026: Second-level cache disabled
-2025-01-16 22:40:58 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-01-16 22:40:58 - HikariPool-2 - Starting...
-2025-01-16 22:40:58 - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2bfe398b
-2025-01-16 22:40:58 - HikariPool-2 - Start completed.
-2025-01-16 22:40:58 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-01-16 22:40:58 - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
-	Database driver: undefined/unknown
-	Database version: 8.0.36
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-01-16 22:40:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-01-16 22:40:58 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-01-16 22:40:58 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-01-16 22:40:58 - Initializing Spring TestDispatcherServlet ''
-2025-01-16 22:40:58 - Initializing Servlet ''
-2025-01-16 22:40:58 - Completed initialization in 1 ms
-2025-01-16 22:40:58 - Started LoginControllerTest in 0.716 seconds (process running for 6.968)
-2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
+  <testcase name="testRegisterInvalidEmail" classname="com.authservice.auth_service.controller.RegisterControllerTest" time="0.052">
+    <failure message="JSON path &quot;$.message&quot; expected:&lt;Please provide a valid email address&gt; but was:&lt;Validation failed&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: JSON path "$.message" expected:<Please provide a valid email address> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.controller.RegisterControllerTest.testRegisterInvalidEmail(RegisterControllerTest.java:79)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
 2025-01-16 22:40:59 - Initializing Servlet ''
-2025-01-16 22:40:59 - Completed initialization in 0 ms
-
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/login
-       Parameters = {}
-          Headers = [Content-Type:"application/json", Content-Length:"56"]
-             Body = <no character encoding set>
-    Session Attrs = {}
-
-Handler:
-             Type = com.authservice.auth_service.controller.LoginController
-           Method = com.authservice.auth_service.controller.LoginController#login(LoginRequestDTO)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = java.lang.RuntimeException
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 500
-    Error message = null
-          Headers = [Content-Type:"application/json"]
-     Content type = application/json
-             Body = {"message":"An error occurred: Unexpected error","data":null}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
+2025-01-16 22:40:59 - Completed initialization in 1 ms
 ]]></system-out>
   </testcase>
-  <testcase name="testLoginSuccess" classname="com.authservice.auth_service.controller.LoginControllerTest" time="0.072">
+  <testcase name="testRegisterInvalidPassword" classname="com.authservice.auth_service.controller.RegisterControllerTest" time="0.017">
+    <failure message="JSON path &quot;$.message&quot; expected:&lt;Password must contain at least one uppercase letter, one lowercase letter, and one number, Password must be at least 8 characters long&gt; but was:&lt;Validation failed&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: JSON path "$.message" expected:<Password must contain at least one uppercase letter, one lowercase letter, and one number, Password must be at least 8 characters long> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.controller.RegisterControllerTest.testRegisterInvalidPassword(RegisterControllerTest.java:90)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
+2025-01-16 22:40:59 - Initializing Servlet ''
+2025-01-16 22:40:59 - Completed initialization in 0 ms
+]]></system-out>
+  </testcase>
+  <testcase name="testRegisterPasswordWithoutUppercase" classname="com.authservice.auth_service.controller.RegisterControllerTest" time="0.014">
+    <failure message="JSON path &quot;$.message&quot; expected:&lt;Password must contain at least one uppercase letter, one lowercase letter, and one number&gt; but was:&lt;Validation failed&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: JSON path "$.message" expected:<Password must contain at least one uppercase letter, one lowercase letter, and one number> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.controller.RegisterControllerTest.testRegisterPasswordWithoutUppercase(RegisterControllerTest.java:100)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
+2025-01-16 22:40:59 - Initializing Servlet ''
+2025-01-16 22:40:59 - Completed initialization in 0 ms
+]]></system-out>
+  </testcase>
+  <testcase name="testRegisterInvalidJson" classname="com.authservice.auth_service.controller.RegisterControllerTest" time="0.018">
     <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
 2025-01-16 22:40:59 - Initializing Servlet ''
 2025-01-16 22:40:59 - Completed initialization in 0 ms
 
 MockHttpServletRequest:
       HTTP Method = POST
-      Request URI = /api/auth/login
+      Request URI = /api/auth/register
        Parameters = {}
-          Headers = [Content-Type:"application/json", Content-Length:"61"]
+          Headers = [Content-Type:"application/json", Content-Length:"99"]
              Body = <no character encoding set>
     Session Attrs = {}
 
 Handler:
-             Type = com.authservice.auth_service.controller.LoginController
-           Method = com.authservice.auth_service.controller.LoginController#login(LoginRequestDTO)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 200
-    Error message = null
-          Headers = [Content-Type:"application/json"]
-     Content type = application/json
-             Body = {"message":"Login successful","data":"mocked-token"}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testLoginFieldValidation" classname="com.authservice.auth_service.controller.LoginControllerTest" time="0.044">
-    <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
-2025-01-16 22:40:59 - Initializing Servlet ''
-2025-01-16 22:40:59 - Completed initialization in 0 ms
-
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/login
-       Parameters = {}
-          Headers = [Content-Type:"application/json", Content-Length:"42"]
-             Body = <no character encoding set>
-    Session Attrs = {}
-
-Handler:
-             Type = com.authservice.auth_service.controller.LoginController
-           Method = com.authservice.auth_service.controller.LoginController#login(LoginRequestDTO)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = org.springframework.web.bind.MethodArgumentNotValidException
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 400
-    Error message = null
-          Headers = [Content-Type:"application/json"]
-     Content type = application/json
-             Body = {"message":"Validation failed","data":{"password":"Password is required","email":"It must be a valid email"}}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testLoginMissingFields" classname="com.authservice.auth_service.controller.LoginControllerTest" time="0.03">
-    <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
-2025-01-16 22:40:59 - Initializing Servlet ''
-2025-01-16 22:40:59 - Completed initialization in 0 ms
-
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/login
-       Parameters = {}
-          Headers = [Content-Type:"application/json", Content-Length:"24"]
-             Body = <no character encoding set>
-    Session Attrs = {}
-
-Handler:
-             Type = com.authservice.auth_service.controller.LoginController
-           Method = com.authservice.auth_service.controller.LoginController#login(LoginRequestDTO)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = org.springframework.web.bind.MethodArgumentNotValidException
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 400
-    Error message = null
-          Headers = [Content-Type:"application/json"]
-     Content type = application/json
-             Body = {"message":"Validation failed","data":{"email":"Email is required"}}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testLoginDatabaseError" classname="com.authservice.auth_service.controller.LoginControllerTest" time="0.024">
-    <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
-2025-01-16 22:40:59 - Initializing Servlet ''
-2025-01-16 22:40:59 - Completed initialization in 0 ms
-
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/login
-       Parameters = {}
-          Headers = [Content-Type:"application/json", Content-Length:"58"]
-             Body = <no character encoding set>
-    Session Attrs = {}
-
-Handler:
-             Type = com.authservice.auth_service.controller.LoginController
-           Method = com.authservice.auth_service.controller.LoginController#login(LoginRequestDTO)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = com.authservice.auth_service.exception.DatabaseConnectionException
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 500
-    Error message = null
-          Headers = [Content-Type:"application/json"]
-     Content type = application/json
-             Body = {"message":"Error connecting to the database","data":null}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testLoginInvalidJson" classname="com.authservice.auth_service.controller.LoginControllerTest" time="0.017">
-    <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
-2025-01-16 22:40:59 - Initializing Servlet ''
-2025-01-16 22:40:59 - Completed initialization in 0 ms
-
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/login
-       Parameters = {}
-          Headers = [Content-Type:"application/json", Content-Length:"41"]
-             Body = <no character encoding set>
-    Session Attrs = {}
-
-Handler:
-             Type = com.authservice.auth_service.controller.LoginController
-           Method = com.authservice.auth_service.controller.LoginController#login(LoginRequestDTO)
+             Type = com.authservice.auth_service.controller.RegisterController
+           Method = com.authservice.auth_service.controller.RegisterController#register(RegisterRequestDTO)
 
 Async:
     Async started = false
@@ -366,29 +164,46 @@ MockHttpServletResponse:
           Cookies = []
 ]]></system-out>
   </testcase>
-  <testcase name="testLoginNullPointerException" classname="com.authservice.auth_service.controller.LoginControllerTest" time="0.021">
+  <testcase name="testRegisterMissingEmail" classname="com.authservice.auth_service.controller.RegisterControllerTest" time="0.017">
+    <failure message="JSON path &quot;$.message&quot; expected:&lt;Email is required&gt; but was:&lt;Validation failed&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: JSON path "$.message" expected:<Email is required> but was:<Validation failed>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.authservice.auth_service.controller.RegisterControllerTest.testRegisterMissingEmail(RegisterControllerTest.java:57)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
+2025-01-16 22:40:59 - Initializing Servlet ''
+2025-01-16 22:40:59 - Completed initialization in 0 ms
+]]></system-out>
+  </testcase>
+  <testcase name="testRegisterGeneralException" classname="com.authservice.auth_service.controller.RegisterControllerTest" time="0.02">
     <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
 2025-01-16 22:40:59 - Initializing Servlet ''
 2025-01-16 22:40:59 - Completed initialization in 0 ms
 
 MockHttpServletRequest:
       HTTP Method = POST
-      Request URI = /api/auth/login
+      Request URI = /api/auth/register
        Parameters = {}
-          Headers = [Content-Type:"application/json", Content-Length:"56"]
+          Headers = [Content-Type:"application/json", Content-Length:"114"]
              Body = <no character encoding set>
     Session Attrs = {}
 
 Handler:
-             Type = com.authservice.auth_service.controller.LoginController
-           Method = com.authservice.auth_service.controller.LoginController#login(LoginRequestDTO)
+             Type = com.authservice.auth_service.controller.RegisterController
+           Method = com.authservice.auth_service.controller.RegisterController#register(RegisterRequestDTO)
 
 Async:
     Async started = false
      Async result = null
 
 Resolved Exception:
-             Type = java.lang.NullPointerException
+             Type = java.lang.RuntimeException
 
 ModelAndView:
         View name = null
@@ -403,35 +218,35 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Content-Type:"application/json"]
      Content type = application/json
-             Body = {"message":"NullPointerException","data":null}
+             Body = {"message":"An error occurred: Unexpected error","data":null}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
 ]]></system-out>
   </testcase>
-  <testcase name="testLoginInvalidCredentials" classname="com.authservice.auth_service.controller.LoginControllerTest" time="0.018">
+  <testcase name="testRegisterSuccess" classname="com.authservice.auth_service.controller.RegisterControllerTest" time="0.019">
     <system-out><![CDATA[2025-01-16 22:40:59 - Initializing Spring TestDispatcherServlet ''
 2025-01-16 22:40:59 - Initializing Servlet ''
 2025-01-16 22:40:59 - Completed initialization in 0 ms
 
 MockHttpServletRequest:
       HTTP Method = POST
-      Request URI = /api/auth/login
+      Request URI = /api/auth/register
        Parameters = {}
-          Headers = [Content-Type:"application/json", Content-Length:"61"]
+          Headers = [Content-Type:"application/json", Content-Length:"114"]
              Body = <no character encoding set>
     Session Attrs = {}
 
 Handler:
-             Type = com.authservice.auth_service.controller.LoginController
-           Method = com.authservice.auth_service.controller.LoginController#login(LoginRequestDTO)
+             Type = com.authservice.auth_service.controller.RegisterController
+           Method = com.authservice.auth_service.controller.RegisterController#register(RegisterRequestDTO)
 
 Async:
     Async started = false
      Async result = null
 
 Resolved Exception:
-             Type = com.authservice.auth_service.exception.BadCredentialsException
+             Type = null
 
 ModelAndView:
         View name = null
@@ -442,11 +257,11 @@ FlashMap:
        Attributes = null
 
 MockHttpServletResponse:
-           Status = 401
+           Status = 201
     Error message = null
           Headers = [Content-Type:"application/json"]
      Content type = application/json
-             Body = {"message":"Invalid email or password","data":null}
+             Body = {"message":"User registered successfully","data":null}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []

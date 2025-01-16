@@ -7,27 +7,31 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class GlobalExceptionController {
 
-    // Manejo de excepciones de validación RegisterRquestDTO
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ApiResponseDTO> handleValidationExceptions(MethodArgumentNotValidException ex) {
-        List<String> errorMessages = ex.getBindingResult()
-                .getFieldErrors()
-                .stream()
-                .map(DefaultMessageSourceResolvable::getDefaultMessage)
-                .collect(Collectors.toList());
-        String errorMessage = String.join(", ", errorMessages);
-        ApiResponseDTO response = new ApiResponseDTO(errorMessage, null);
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach(error -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            if (!errors.containsKey(fieldName)) {
+                errors.put(fieldName, errorMessage);
+            }
+        });
+        ApiResponseDTO response = new ApiResponseDTO("Validation failed", errors);
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     // Manejo de la excepción cuando el usuario no se encuentra
