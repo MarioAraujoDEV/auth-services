@@ -1,4 +1,4 @@
-com\authservice\auth_service\controller\RegisterControllerTest.class
-com\authservice\auth_service\dto\LoginRequestDTOTest.class
-com\authservice\auth_service\controller\LoginControllerTest.class
-com\authservice\auth_service\AuthServiceApplicationTests.class
+com\zenfit\authservice\controller\RegisterControllerTest.class
+com\zenfit\authservice\dto\LoginRequestDTOTest.class
+com\zenfit\authservice\AuthServiceApplicationTests.class
+com\zenfit\authservice\controller\LoginControllerTest.class

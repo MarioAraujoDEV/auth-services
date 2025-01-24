@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.authservice.auth-service' is invalid and this project uses 'com.authservice.auth_service' instead.
+* The original package name 'com.authservice.auth-service' is invalid and this project uses 'com.zenfit.authservice' instead.
 
 # Getting Started
 
